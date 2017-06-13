@@ -1,5 +1,5 @@
 # easyedit
-inline editing of a single an HTMLElement
+inline editing of a single HTMLElement
 
 ## rationale
 

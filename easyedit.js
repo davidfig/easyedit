@@ -76,7 +76,7 @@ class EasyEdit
         document.body.appendChild(test);
         test.style.font = this.replace.style.font;
         test.innerHTML = this.replace.value;
-        if (this.replace.offsetWidth < test.offsetWidth)
+        if (this.replace.offsetWidth < test.offsetWidth && test.offsetWidth < this.replace.parentElement.offsetWidth)
         {
             this.replace.style.width = test.offsetWidth + 'px';
         }
