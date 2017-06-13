@@ -32,6 +32,7 @@ class EasyEdit
         this.replace.addEventListener('keydown', this.key.bind(this));
         this.replace.addEventListener('blur', this.change.bind(this));
         this.object.insertAdjacentElement('afterend', this.replace);
+        this.maxWidth = parseInt(window.getComputedStyle(this.object.parentElement).width);
     }
 
     edit()
@@ -39,7 +40,7 @@ class EasyEdit
         this.display = this.object.style.display;
         this.replace.style.width = this.object.offsetWidth + 'px';
         this.replace.style.height = this.object.offsetHeight + 'px';
-        this.replace.style.font = window.getComputedStyle(this.object, null).getPropertyValue('font');;
+        this.replace.style.font = window.getComputedStyle(this.object, null).getPropertyValue('font');
         this.replace.value = this.object.innerHTML;
         this.object.style.display = 'none';
         this.replace.style.display = this.display;
@@ -76,7 +77,7 @@ class EasyEdit
         document.body.appendChild(test);
         test.style.font = this.replace.style.font;
         test.innerHTML = this.replace.value;
-        if (this.replace.offsetWidth < test.offsetWidth && test.offsetWidth < this.replace.parentElement.offsetWidth)
+        if (this.replace.offsetWidth < test.offsetWidth && test.offsetWidth < this.maxWidth)
         {
             this.replace.style.width = test.offsetWidth + 'px';
         }
