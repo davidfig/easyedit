@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/davidfig/easyedit/issues"
   },
-  "homepage": "https://github.com/davidfig/easyedit#readme"
+  "homepage": "https://github.com/davidfig/easyedit#readme",
+  "dependencies": {
+    "clicked": "^1.1.0"
+  }
 }
