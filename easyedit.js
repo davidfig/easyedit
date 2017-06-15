@@ -27,6 +27,10 @@ class EasyEdit
         {
             this.replace.style[key] = styles[key];
         }
+        if (true || options.underline)
+        {
+            this.object.style.borderBottom = '1px dashed ' + window.getComputedStyle(this.object, null).getPropertyValue('color');
+        }
         this.replace.addEventListener('change', this.change.bind(this));
         this.replace.addEventListener('input', this.input.bind(this));
         this.replace.addEventListener('keydown', this.key.bind(this));
@@ -41,7 +45,9 @@ class EasyEdit
         this.replace.style.width = this.object.offsetWidth + 'px';
         this.replace.style.height = this.object.offsetHeight + 'px';
         this.replace.style.font = window.getComputedStyle(this.object, null).getPropertyValue('font');
-        this.replace.value = this.object.innerHTML;
+        this.replace.style.margin = window.getComputedStyle(this.object, null).getPropertyValue('margin');
+        this.replace.style.padding = window.getComputedStyle(this.object, null).getPropertyValue('padding');
+        this.replace.value = this.object.innerText;
         this.object.style.display = 'none';
         this.replace.style.display = this.display;
         this.replace.select();
