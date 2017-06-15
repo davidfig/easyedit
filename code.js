@@ -1,7 +1,7 @@
 // const easyedit = require('easyedit')
 const easyedit = require('../easyedit/easyedit');
 
-window.onload = function test()
+window.onload = function ()
 {
     const tests = document.getElementsByClassName('test');
     let underline = true;
