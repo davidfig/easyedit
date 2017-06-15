@@ -22,7 +22,7 @@ class EasyEdit
         clicked(object, this.edit.bind(this));
         this.replace = document.createElement('input');
         this.replace.style.display = 'none';
-        const styles = options.styles || {};
+        const styles = this.options.styles || {};
         for (let key in styles)
         {
             this.replace.style[key] = styles[key];
