@@ -23,7 +23,7 @@ window.onload = function ()
 
     // show code on page
     require('./highlight')();
-}
+};
 },{"../easyedit/easyedit":181,"./highlight":2}],2:[function(require,module,exports){
 // shows the code in the demo
 module.exports = function highlight()

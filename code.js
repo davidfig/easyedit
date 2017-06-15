@@ -22,4 +22,4 @@ window.onload = function ()
 
     // show code on page
     require('./highlight')();
-}
+};
