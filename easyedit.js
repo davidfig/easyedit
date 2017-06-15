@@ -11,9 +11,9 @@ class EasyEdit
      * @param {object} options
      * @param {object} options.styles - additinoal styles to apply to the inputElement
      * @param {function} options.onedit - editing starts: callback(element, inputElement)
-     * @param {function} options.onsuccess - value changed and user pressed enter: callback(value, element)
+     * @param {function} options.onsuccess - value changed and user pressed enter: callback(value, element, originalValue)
      * @param {function} options.oncancel - editing canceled with escape: callback(element)
-     * @param {function} options.onchange - value was changed (but editing is not done): callback(value, element)
+     * @param {function} options.onchange - value was changed (but editing is not done): callback(value, element, originalValue)
      */
     constructor(object, options)
     {
@@ -47,7 +47,7 @@ class EasyEdit
         this.replace.style.font = window.getComputedStyle(this.object, null).getPropertyValue('font');
         this.replace.style.margin = window.getComputedStyle(this.object, null).getPropertyValue('margin');
         this.replace.style.padding = window.getComputedStyle(this.object, null).getPropertyValue('padding');
-        this.replace.value = this.object.innerText;
+        this.original = this.replace.value = this.object.innerText;
         this.object.style.display = 'none';
         this.replace.style.display = this.display;
         this.replace.select();
@@ -90,7 +90,7 @@ class EasyEdit
         document.body.removeChild(test);
         if (this.options.onchange)
         {
-            this.options.onchange(this.replace.value, this.object);
+            this.options.onchange(this.replace.value, this.object, this.original);
         }
     }
 
@@ -102,7 +102,7 @@ class EasyEdit
         this.object.style.display = this.display;
         if (changed && this.options.onsuccess)
         {
-            this.options.onsuccess(this.object.innerHTML, this.object);
+            this.options.onsuccess(this.object.innerHTML, this.object, this.original);
         }
     }
 }
