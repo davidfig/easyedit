@@ -1,11 +1,10 @@
 // const easyedit = require('easyedit')
 const easyedit = require('../easyedit/easyedit');
 
-window.onload = test;
-
-function test()
+window.onload = function test()
 {
     const tests = document.getElementsByClassName('test');
+    let underline = true;
     for (let test of tests)
     {
         if (test.id === 'red')
@@ -14,8 +13,11 @@ function test()
         }
         else
         {
-            new easyedit(test);
+            new easyedit(test, { underline });
         }
+
+        // alternate underline
+        underline = !underline;
     }
 
     // show code on page
