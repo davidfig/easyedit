@@ -26,9 +26,9 @@ https://davidfig.github.io/easyedit/
 - {object} [options]
 - {object} options.styles - additional styles to apply to the inputElement
 - {function} options.onedit - editing starts: callback(element, inputElement)
-- {function} options.onsuccess - value changed and user pressed enter: callback(value, element)
+- {function} options.onsuccess - value changed and user pressed enter: callback(value, element, originalValue)
 - {function} options.oncancel - editing canceled with escape: callback(element)
-- {function} options.onchange - value was changed (but editing is not done): callback(value, element)
+- {function} options.onchange - value was changed (but editing is not done): callback(value, element, originalValue)
 - {boolean} [options.underline] - adds an underline to the htmlElement
 
 MIT License
