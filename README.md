@@ -29,6 +29,7 @@ https://davidfig.github.io/easyedit/
 - {function} options.onsuccess - value changed and user pressed enter: callback(value, element)
 - {function} options.oncancel - editing canceled with escape: callback(element)
 - {function} options.onchange - value was changed (but editing is not done): callback(value, element)
+- {boolean} [options.underline] - adds an underline to the htmlElement
 
 MIT License
 (c) 2017 David Figatner (YOPEY YOPEY LLC)
