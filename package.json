@@ -1,10 +1,12 @@
 {
-  "name": "easyedit",
-  "version": "1.0.2",
+  "name": "easyedit-demo",
+  "version": "1.0.0",
   "description": "inline editing of a single line of text",
-  "main": "easyedit.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "browserify highlight.js code.js -o index.js",
+    "watch": "watchify highlight.js code.js -o index.js",
+    "test": "serve -p 1300"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
   },
   "homepage": "https://github.com/davidfig/easyedit#readme",
   "dependencies": {
-    "clicked": "^1.1.0"
+    "clicked": "^1.1.0",
+    "highlight.js": "^9.12.0"
   }
 }
