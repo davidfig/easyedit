@@ -27,7 +27,7 @@ class EasyEdit
         {
             this.replace.style[key] = styles[key];
         }
-        if (options.underline)
+        if (this.options.underline)
         {
             this.object.style.borderBottom = '1px dashed ' + window.getComputedStyle(this.object, null).getPropertyValue('color');
         }
