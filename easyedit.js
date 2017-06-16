@@ -96,7 +96,7 @@ class EasyEdit
 
     change()
     {
-        if (this.removing)
+        if (this.removing || !this.replace.parentNode)
         {
             return;
         }
