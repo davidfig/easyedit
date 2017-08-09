@@ -30,6 +30,7 @@ class EasyEdit
     {
         this.display = this.object.style.display;
         this.replace = document.createElement('input');
+        this.replace.setAttribute('type', 'text');
         this.replace.style.display = 'none';
         this.replace.addEventListener('change', this.change.bind(this));
         this.replace.addEventListener('input', this.input.bind(this));
