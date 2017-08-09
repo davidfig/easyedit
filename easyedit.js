@@ -31,11 +31,6 @@ class EasyEdit
         this.display = this.object.style.display;
         this.replace = document.createElement('input');
         this.replace.style.display = 'none';
-        const styles = this.options.styles || {};
-        for (let key in styles)
-        {
-            this.replace.style[key] = styles[key];
-        }
         this.replace.addEventListener('change', this.change.bind(this));
         this.replace.addEventListener('input', this.input.bind(this));
         this.replace.addEventListener('keydown', this.key.bind(this));
@@ -47,6 +42,11 @@ class EasyEdit
         this.replace.style.font = window.getComputedStyle(this.object, null).getPropertyValue('font');
         this.replace.style.margin = window.getComputedStyle(this.object, null).getPropertyValue('margin');
         this.replace.style.padding = window.getComputedStyle(this.object, null).getPropertyValue('padding');
+        const styles = this.options.styles || {};
+        for (let key in styles)
+        {
+            this.replace.style[key] = styles[key];
+        }
         this.original = this.replace.value = this.object.innerText;
         this.object.style.display = 'none';
         this.replace.style.display = this.display;
