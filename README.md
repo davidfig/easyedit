@@ -12,7 +12,7 @@ Make any element editable with a click. The input element uses the same font and
     const div = document.createElement('div')
     document.body.appendChild(div)
     div.innerHTML = 'Please edit me.'
-    new easyedit(div, { onsuccess: (value) => console.log('div changed to: ' + value));
+    new easyedit(div, { onsuccess: (value) => console.log('div changed to: ' + value) })
 
 ## demo
 https://davidfig.github.io/easyedit/

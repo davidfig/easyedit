@@ -9,7 +9,7 @@ class EasyEdit
      *
      * @param {HTMLElement} object
      * @param {object} options
-     * @param {object} options.styles - additinoal styles to apply to the inputElement
+     * @param {object} options.styles - additional styles to apply to the inputElement
      * @param {function} options.onedit - editing starts: callback(element, inputElement)
      * @param {function} options.onsuccess - value changed and user pressed enter: callback(value, element, originalValue)
      * @param {function} options.oncancel - editing canceled with escape: callback(element)
