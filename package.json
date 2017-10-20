@@ -1,10 +1,13 @@
 {
   "name": "easyedit",
-  "version": "1.2.3",
+  "version": "1.3.0",
   "description": "inline editing of a single line of text",
   "main": "easyedit.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "budo docs/code.js:index.js --dir docs --live",
+    "docs": "markdown-api README.md easyedit.js",
+    "build": "browserify docs/code.js -o docs/index.js",
+    "prepare": "yarn docs && yarn build"
   },
   "repository": {
     "type": "git",
@@ -23,5 +26,9 @@
   "homepage": "https://github.com/davidfig/easyedit#readme",
   "dependencies": {
     "clicked": "^1.1.0"
+  },
+  "devDependencies": {
+    "fork-me-github": "^1.0.3",
+    "highlight.js": "^9.12.0"
   }
 }
