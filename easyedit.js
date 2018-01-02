@@ -74,11 +74,13 @@ class EasyEdit extends Events
                 this.options.oncancel(this.object, this.replace);
             }
             this.emit('cancel', this.object, this.replace);
+            e.stopPropagation()
         }
         else if (code === 13)
         {
             this.change();
         }
+        e.stopPropagation()
     }
 
     input()
