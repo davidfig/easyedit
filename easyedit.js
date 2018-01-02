@@ -1,9 +1,10 @@
 // MIT license
 // author: David Figatner (YOPEY YOPEY LLC)
 
+const Events = require('eventemitter3')
 const clicked = require('clicked');
 
-class EasyEdit
+class EasyEdit extends Events
 {
     /**
      *
@@ -17,6 +18,7 @@ class EasyEdit
      */
     constructor(object, options)
     {
+        super()
         this.object = object;
         this.options = options || {};
         clicked(object, this.edit.bind(this));
@@ -56,6 +58,7 @@ class EasyEdit
         {
             this.options.onedit(this.object, this.replace);
         }
+        this.emit('edit', this.object, this.replace)
     }
 
     key(e)
@@ -70,6 +73,7 @@ class EasyEdit
             {
                 this.options.oncancel(this.object, this.replace);
             }
+            this.emit('cancel', this.object, this.replace);
         }
         else if (code === 13)
         {
@@ -93,6 +97,7 @@ class EasyEdit
         {
             this.options.onchange(this.replace.value, this.object, this.original);
         }
+        this.emit('change', this.replace.value, this.object, this.original);
     }
 
     change()
@@ -110,6 +115,7 @@ class EasyEdit
         {
             this.options.onsuccess(this.object.innerHTML, this.object, this.original);
         }
+        this.emit('success', this.object.innerHTML, this.object, this.original);
         this.removing = false;
     }
 }

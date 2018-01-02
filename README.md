@@ -19,7 +19,7 @@ https://davidfig.github.io/easyedit/
 
 
 ## API
-```
+```js
     /**
      *
      * @param {HTMLElement} object
@@ -31,6 +31,7 @@ https://davidfig.github.io/easyedit/
      * @param {function} options.onchange - value was changed (but editing is not done): callback(value, element, originalValue)
      */
     constructor(object, options)
+
 ```
 ## license  
 MIT License  

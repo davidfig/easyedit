@@ -7,7 +7,7 @@
     "test": "budo docs/code.js:index.js --dir docs --live",
     "docs": "markdown-api README.md easyedit.js",
     "build": "browserify docs/code.js -o docs/index.js",
-    "prepare": "yarn docs && yarn build"
+    "setup": "yarn docs && yarn build"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/davidfig/easyedit#readme",
   "dependencies": {
-    "clicked": "^1.1.0"
+    "clicked": "^1.1.0",
+    "eventemitter3": "^3.0.0"
   },
   "devDependencies": {
     "fork-me-github": "^1.0.3",
