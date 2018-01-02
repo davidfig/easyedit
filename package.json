@@ -1,6 +1,6 @@
 {
   "name": "easyedit",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "inline editing of a single line of text",
   "main": "easyedit.js",
   "scripts": {
